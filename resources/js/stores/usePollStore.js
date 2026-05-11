@@ -17,5 +17,16 @@ export function usePollStore() {
     }
   }
 
-  return { polls, setPolls, deletePoll };
+  async function editPoll(id, data) {
+    const result = await fetchApi({ url: 'polls/' + id, method: 'PUT', body: data });
+    if (result) {
+      const index = polls.value.findIndex(p => p.id === id);
+      if (index !== -1) {
+        polls.value[index] = { ...polls.value[index], ...data };
+      }
+    }
+    // return result;
+  }
+
+  return { polls, setPolls, deletePoll, editPoll };
 }
