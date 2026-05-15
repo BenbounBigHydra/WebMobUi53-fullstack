@@ -151,7 +151,7 @@ class DatabaseSeeder extends Seeder
                         'allow_multiple_choices' => false,
                         'allow_vote_change' => false,
                         'results_public' => false,
-                        'duration' => null,
+                        'duration' => 50000,
                         'started_at' => null,
                         'ends_at' => null,
                         'created_at' => new \DateTime('2026-04-19 10:00:00'),
@@ -166,23 +166,6 @@ class DatabaseSeeder extends Seeder
                         ['poll_id' => $i, 'label' => 'La réponse D', 'created_at' => new \DateTime('2026-04-19 10:00:00'), 'updated_at' => new \DateTime('2026-04-19 10:00:00')],
                     ]);
                 }
-
-                DB::table('polls')->insert([
-                    'id' => $i,
-                    'user_id' => 1,
-                    'title' => 'test non draft',
-                    'question' => 'Quelle est votre réponse ?',
-                    'secret_token' => \Illuminate\Support\Str::random(32),
-                    'is_draft' => false,
-                    'allow_multiple_choices' => false,
-                    'allow_vote_change' => false,
-                    'results_public' => false,
-                    'duration' => null,
-                    'started_at' => null,
-                    'ends_at' => null,
-                    'created_at' => new \DateTime('2026-04-19 10:00:00'),
-                    'updated_at' => new \DateTime('2026-04-19 10:00:00'),
-                ]);
             }
         );
     }

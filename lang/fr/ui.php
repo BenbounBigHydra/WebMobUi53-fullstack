@@ -35,6 +35,9 @@ return [
             'no_account' => 'Pas encore de compte ?',
             'register' => "S'inscrire",
         ],
+        'polls' => [
+            'title' => 'Mes sondages',
+        ],
         'register' => [
             'title' => 'Inscription',
             'description' => 'Créez votre compte sur :app_name pour commencer à partager vos idées.',

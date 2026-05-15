@@ -1,3 +1,4 @@
+<x-default-layout>
 <x-vue-app-layout>
     <x-slot:scripts>
         @vite(['resources/js/poll-dashboard.js'])
@@ -16,3 +17,4 @@
         ])'
     ></div>
 </x-vue-app-layout>
+</x-default-layout>

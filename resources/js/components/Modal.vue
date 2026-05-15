@@ -34,6 +34,8 @@ defineEmits(['close']);
   padding: 20px;
   border-radius: 8px;
   width: 90%; max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
 }
 .modal-header {
   display: flex; justify-content: space-between; align-items: center;
