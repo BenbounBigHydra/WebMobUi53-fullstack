@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class PollOption extends Model
 {
+    protected $table = 'poll_options';
+
     protected $fillable = [
         'label',
     ];
@@ -24,6 +26,6 @@ class PollOption extends Model
      */
     public function votes(): HasMany
     {
-        return $this->hasMany(PollVote::class);
+        return $this->hasMany(PollVote::class, 'poll_option_id');
     }
 }

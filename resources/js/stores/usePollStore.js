@@ -80,5 +80,13 @@ export function usePollStore() {
         return newPoll;
     }
 
-    return { polls, setPolls, deletePoll, editPoll, publishPoll, createPoll };
+    async function submitVote(pollId, optionIds) {
+        return fetchApi({
+            url: `/polls/${pollId}/vote`,
+            method: "POST",
+            data: { option_ids: optionIds },
+        });
+    }
+
+    return { polls, setPolls, deletePoll, editPoll, publishPoll, createPoll, submitVote };
 }
