@@ -75,8 +75,8 @@ Pour développer et tester le projet en local, voici les étapes à suivre :
 
 i. Reset la base de donnée pour recommencer une phase de test (dans le cas où les tests auraient détruit les données) :
 
-    ```bash
-    php artisan migrate:fresh --seed
-    ```
+```bash
+php artisan migrate:fresh --seed
+```
 
 L'application sera accessible à l'adresse <http://127.0.0.1:8000>.
