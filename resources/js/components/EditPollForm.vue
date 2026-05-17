@@ -1,7 +1,7 @@
 <template>
     <div class="poll-form">
         <div class="form-group">
-            <label>Poll Title</label>
+            <label>Titre</label>
             <input v-model="formData.title" type="text" placeholder="Enter title" />
         </div>
 
@@ -11,22 +11,22 @@
         </div>
 
         <div class="form-group">
-            <label>Duration (days)</label>
+            <label>Durée (jours)</label>
             <input v-model.number="durationInDays" type="number" min="1" placeholder="Leave empty for no limit" />
         </div>
 
         <div class="form-group toggles">
             <label class="toggle-label">
                 <input type="checkbox" v-model="formData.allow_multiple_choices" />
-                Allow multiple choices
+                Choix multiples
             </label>
             <label class="toggle-label">
                 <input type="checkbox" v-model="formData.allow_vote_change" />
-                Allow vote change
+                Autoriser changement de vote
             </label>
             <label class="toggle-label">
                 <input type="checkbox" v-model="formData.results_public" />
-                Public results
+                Résultats publics
             </label>
         </div>
 
@@ -40,16 +40,16 @@
                 </button>
             </div>
             <button type="button" class="btn-add-option" @click="addOption">
-                + Add option
+                + Option supplémentaire
             </button>
         </div>
 
         <div class="form-actions">
             <button type="button" class="btn-cancel" @click="$emit('close')">
-                Cancel
+                Annuler
             </button>
             <button type="button" class="btn-save" @click="handleSubmit">
-                Save Changes
+                Sauvegarder
             </button>
         </div>
     </div>

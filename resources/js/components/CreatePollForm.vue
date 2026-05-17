@@ -1,32 +1,32 @@
 <template>
     <div class="poll-form">
         <div class="form-group">
-            <label>Poll Title</label>
-            <input v-model="formData.title" type="text" placeholder="Enter title" />
+            <label>Titre</label>
+            <input v-model="formData.title" type="text" placeholder="Entrez titre" />
         </div>
 
         <div class="form-group">
             <label>Question <span class="required">*</span></label>
-            <textarea v-model="formData.question" placeholder="Enter question"></textarea>
+            <textarea v-model="formData.question" placeholder="Entrez question"></textarea>
         </div>
 
         <div class="form-group">
-            <label>Duration (days)</label>
+            <label>Durée (jours)</label>
             <input v-model.number="durationInDays" type="number" min="1" />
         </div>
 
         <div class="form-group toggles">
             <label class="toggle-label">
                 <input type="checkbox" v-model="formData.allow_multiple_choices" />
-                Allow multiple choices
+                Choix multiples
             </label>
             <label class="toggle-label">
                 <input type="checkbox" v-model="formData.allow_vote_change" />
-                Allow vote change
+                Autoriser changement de vote
             </label>
             <label class="toggle-label">
                 <input type="checkbox" v-model="formData.results_public" />
-                Public results
+                Résultats publics
             </label>
         </div>
 
@@ -40,7 +40,7 @@
                 </button>
             </div>
             <button type="button" class="btn-add-option" @click="addOption">
-                + Add option
+                + Option supplémentaire
             </button>
         </div>
 
@@ -48,10 +48,10 @@
 
         <div class="form-actions">
             <button type="button" class="btn-cancel" @click="$emit('close')">
-                Cancel
+                Annuler
             </button>
             <button type="button" class="btn-save" @click="handleSubmit" :disabled="isSubmitting">
-                {{ isSubmitting ? 'Creating...' : 'Create Poll' }}
+                {{ isSubmitting ? 'Création...' : 'Créer sondage' }}
             </button>
         </div>
     </div>

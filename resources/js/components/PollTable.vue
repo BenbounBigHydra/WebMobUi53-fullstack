@@ -61,7 +61,7 @@ const handleUpdate = async (updatedData) => {
 </script>
 
 <template>
-    <button class="mainButton" @click="openCreateModal()">New Poll</button>
+    <button class="mainButton" @click="openCreateModal()">Nouveau sondage</button>
 
     <p v-if="polls.length === 0">Aucun sondage actuellement.</p>
 
@@ -70,13 +70,13 @@ const handleUpdate = async (updatedData) => {
             <tr>
                 <th class="border px-3 py-2">Actions</th>
                 <th class="border px-3 py-2">ID</th>
-                <th class="border px-3 py-2">Title</th>
+                <th class="border px-3 py-2">Titre</th>
                 <th class="border px-3 py-2">Question</th>
                 <!-- <th class="border px-3 py-2">Draft</th> -->
-                <th class="border px-3 py-2">Begin</th>
-                <th class="border px-3 py-2">End</th>
-                <th class="border px-3 py-2">Publish</th>
-                <th class="border px-3 py-2">Share</th>
+                <th class="border px-3 py-2">Commence</th>
+                <th class="border px-3 py-2">Fini</th>
+                <th class="border px-3 py-2">Publier</th>
+                <th class="border px-3 py-2">Partager</th>
             </tr>
         </thead>
         <tbody>
@@ -89,15 +89,14 @@ const handleUpdate = async (updatedData) => {
                 <!-- <td class="border px-3 py-2">{{ poll.is_draft ? 'Oui' : 'Non' }}</td> -->
                 <td class="border px-3 py-2">{{ poll.started_at || '-' }}</td>
                 <td class="border px-3 py-2">{{ poll.ends_at || '-' }}</td>
-                <td class="border px-3 py-2"><button v-if="poll.is_draft" @click="publishPoll(poll.id)">Start
-                        Poll</button></td>
-                <td class="border px-3 py-2"><button @click="copyLink(poll.secret_token)">Copy Link</button></td>
+                <td class="border px-3 py-2"><button v-if="poll.is_draft" @click="publishPoll(poll.id)">Démarrer</button></td>
+                <td class="border px-3 py-2"><button @click="copyLink(poll.secret_token)">Lien du sondage</button></td>
             </tr>
         </tbody>
     </table>
     <Modal :isOpen="showModal" @close="closeModal">
         <template #header>
-            <h3 v-if="editingPoll">Editing: {{ editingPoll?.title }}</h3>
+            <h3 v-if="editingPoll">Edit.: {{ editingPoll?.title }}</h3>
             <h3 v-else>Creating new poll</h3>
         </template>
 
