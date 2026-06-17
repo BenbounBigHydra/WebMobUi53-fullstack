@@ -80,8 +80,6 @@ const formData = reactive({
     options: props.poll.options ? props.poll.options.map(o => ({ ...o })) : [{ label: '' }, { label: '' }]
 });
 
-console.dir(props.poll);
-
 const addOption = () => {
     formData.options.push({ label: '' });
 };
